@@ -14,6 +14,7 @@ var (
 // optional since an exchange may establish default values.
 type BidRequest struct {
 	ID          string       `json:"id"` // Unique ID of the bid request
+	Timestamp   string `json:"timestamp,omitempty"`
 	Imp         []Impression `json:"imp,omitempty"`
 	Site        *Site        `json:"site,omitempty"`
 	App         *App         `json:"app,omitempty"`
@@ -33,6 +34,7 @@ type BidRequest struct {
 	Source      *Source      `json:"source,omitempty"`  // A Source object that provides data about the inventory source and which entity makes the final decision
 	Regs        *Regulations `json:"regs,omitempty"`
 	Ext         Extension    `json:"ext,omitempty"`
+	Segment     map[string][]string    `json:"segments,omitempty"`
 
 	Pmp *Pmp `json:"pmp,omitempty"` // DEPRECATED: kept for backwards compatibility
 }

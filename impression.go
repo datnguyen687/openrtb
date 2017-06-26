@@ -31,6 +31,8 @@ type Impression struct {
 	Secure            NumberOrString `json:"secure,omitempty"`            // Flag to indicate whether the impression requires secure HTTPS URL creative assets and markup.
 	Exp               int            `json:"exp,omitempty"`               // Advisory as to the number of seconds that may elapse between the auction and the actual impression.
 	IFrameBuster      []string       `json:"iframebuster,omitempty"`      // Array of names for supportediframe busters.
+	Position          *int             `json:"position,omitempty"`
+	Formats           []string `json:"formats,omitempty"`
 	Ext               Extension      `json:"ext,omitempty"`
 }
 
